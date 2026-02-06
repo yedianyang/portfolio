@@ -1,0 +1,14 @@
+# Build settings
+
+port: 4000
+markdown:  kramdown
+permalink: /:title
+plugins:   [jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
+
+# Customise atom feed settings
+
+title:       "Jingxi Guo | Studio"
+description: "Sound and Future Media"
+author:      "Jingxi Guo"
+url:         "https://yedianyang.com"
+baseurl:     ""
