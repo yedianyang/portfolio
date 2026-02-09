@@ -1,6 +1,8 @@
 # The MIT License (MIT)
 
-Copyright (c) 2021 Paul Le
+Copyright (c) 2024 Jingxi Guo
+
+Based on [Portfolio Jekyll Theme](https://github.com/LeNPaul/portfolio-jekyll-theme) by Paul Le.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

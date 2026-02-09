@@ -31,14 +31,3 @@ seo:
   rel-author: ''
   rel-publisher: ''
 
-#-------------------------------
-# Google Analytics Section
-
-google-analytics-ua: ''
-
-#-------------------------------
-# Disqus Section
-
-disqus:
-  comments: false
-  disqus_shortname: ''
