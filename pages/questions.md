@@ -97,7 +97,36 @@ We're dropping Jekyll. Which direction do you prefer?
 - [ ] d) Webflow / Squarespace — no-code, fastest to launch
 - [ ] e) No preference — you decide
 
-## 9. Reference Websites
+## 9. Technical Requirements
+
+What features do you need the site to support? (Pick all that apply)
+
+**Media:**
+- [ ] a) Embedded video player (Vimeo / YouTube)
+- [ ] b) Embedded audio player (SoundCloud / custom player with waveform)
+- [ ] c) Image gallery / lightbox
+- [ ] d) Showreel auto-play on homepage
+
+**Functionality:**
+- [ ] e) Contact form (with email notification)
+- [ ] f) CMS — ability to add/edit projects without touching code
+- [ ] g) Blog / journal section
+- [ ] h) Multi-language support (English + Chinese)
+- [ ] i) Client testimonials section
+- [ ] j) Resume / CV download (PDF)
+
+**Performance & SEO:**
+- [ ] k) Fast loading / mobile-first responsive
+- [ ] l) SEO optimization (Google search visibility)
+- [ ] m) Custom domain (yedianyang.com)
+- [ ] n) Analytics (track visitor behavior)
+
+**Other:**
+- [ ] o) Dark mode / light mode toggle
+- [ ] p) Password-protected pages (e.g., for unreleased work)
+- [ ] q) Other: ___
+
+## 10. Reference Websites
 
 Send 1-3 websites where you feel "I want something like this":
 
@@ -105,7 +134,7 @@ Send 1-3 websites where you feel "I want something like this":
 2. ___
 3. ___
 
-## 10. Social Media & External Links
+## 11. Social Media & External Links
 
 Besides Email and LinkedIn, what else to include?
 
@@ -116,6 +145,6 @@ Besides Email and LinkedIn, what else to include?
 - [ ] e) Medium
 - [ ] f) Other: ___
 
-## 11. Anything Else?
+## 12. Anything Else?
 
 Any other requirements or ideas not covered above?
