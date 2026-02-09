@@ -87,7 +87,17 @@ Write 1-2 sentences:
 - [ ] c) Image-driven — let work speak
 - [ ] d) Other (describe or send reference links)
 
-## 8. Reference Websites
+## 8. Tech Stack Preference
+
+We're dropping Jekyll. Which direction do you prefer?
+
+- [ ] a) Next.js — most flexible, good for dynamic features (contact forms, CMS)
+- [ ] b) Astro — modern, fast, great for static portfolio with media embeds
+- [ ] c) Hugo — fast static site, simple, Markdown-based
+- [ ] d) Webflow / Squarespace — no-code, fastest to launch
+- [ ] e) No preference — you decide
+
+## 9. Reference Websites
 
 Send 1-3 websites where you feel "I want something like this":
 
@@ -95,7 +105,7 @@ Send 1-3 websites where you feel "I want something like this":
 2. ___
 3. ___
 
-## 9. Social Media & External Links
+## 10. Social Media & External Links
 
 Besides Email and LinkedIn, what else to include?
 
@@ -106,6 +116,6 @@ Besides Email and LinkedIn, what else to include?
 - [ ] e) Medium
 - [ ] f) Other: ___
 
-## 10. Anything Else?
+## 11. Anything Else?
 
 Any other requirements or ideas not covered above?
