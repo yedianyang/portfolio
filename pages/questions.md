@@ -4,147 +4,102 @@ title: Website Planning
 permalink: /questions/
 ---
 
-# Website Planning — Questionnaire
+# Website Planning — Questionnaire (Completed)
 
-Goal: Build a professional portfolio that attracts clients and generates work.
+**Goal:** Build a professional portfolio that attracts clients and generates work.
+**Budget:** ~30 USD/year (migrating from Wix at ~1000 RMB/year to reduce cost)
 
 ---
 
-## 1. Services
+## 1. Services (Priority)
 
-What types of work do you want to get through the website? (Mark priority 1/2/3)
+1. Interactive product sound systems (UX audio, sonic branding)
+2. Film post-production sound (sound supervisor)
+3. Brand / commercial sound design
 
-- [ ] a) Film sound post-production (sound design, mixing, Foley)
-- [ ] b) Production sound (on-set recording)
-- [ ] c) Commercial / advertising sound design
-- [ ] d) Brand / product sound (UX audio, sonic branding, like the P&G project)
-- [ ] e) Podcast / audio content production
-- [ ] f) Other: ___
+## 2. Target Clients (Priority)
 
-## 2. Target Clients
+1. Tech companies / brands
+2. Independent film directors / producers
+3. General portfolio showcase
 
-Who do you most want to attract? (Pick all that apply)
+## 3. Work List
 
-- [ ] a) Independent film directors / producers
-- [ ] b) Ad agencies / production companies
-- [ ] c) Tech companies / brands
-- [ ] d) Podcasters / content creators
-- [ ] e) Other: ___
-
-## 3. Work List (Most Important!)
-
-List the projects you want to showcase:
-
-**Film / Commercial:**
-Format: Title / Year / Your Role / One-line description
-
-- Iron Hands / 2017 / Boom Operator / Short film
-- _(add more...)_
+**Film:**
+- 当我望向你的时候 / 2021 / Sound Designer / Documentary
+- 绿夜 / 2023 / Production Sound Mixer / Feature film
+- 城市蘑菇生成指南 / 2023 / Sound Designer, Media Artist / Experimental short
 
 **Brand / Product:**
-Format: Client / Year / What you did
+- Procter & Gamble / Sound icon design
+- (to be added)
 
-- Procter & Gamble / ? / Sound icon design
-- _(add more...)_
-
-**Art / Installation** (bonus section):
-Format: Title / Year / One-line description
-
-- _(add if any...)_
+**Art / Installation:**
+- (to be added)
 
 ## 4. Showreel / Demo
 
-This is THE most critical asset in the sound industry. Do you have one?
-
-- [ ] a) I have a video showreel (send link)
-- [ ] b) I have an audio demo reel
-- [ ] c) I don't have one yet — need to make one
-- [ ] d) I have raw materials but haven't edited it
+**C — Don't have one yet, need to make one.**
 
 ## 5. Media Assets
 
-What ready-to-use assets do you have?
-
-- [ ] a) Project screenshots / stills
-- [ ] b) Video clips (Vimeo/YouTube links)
-- [ ] c) Audio clips (SoundCloud, etc.)
-- [ ] d) Client logos or permission to use brand names
-- [ ] e) Assets still need to be organized
+- [x] a) Project screenshots / stills
+- [x] b) Video clips (Vimeo/YouTube links)
+- [x] e) Assets still need to be organized
 
 ## 6. Homepage Core Message
 
-The homepage needs to tell visitors in 5 seconds who you are and what you do.
-Write 1-2 sentences:
-
-> Example: "Sound designer & engineer for film, brands, and emerging media"
->
-> Your version: ___
+> "Sound designer, Artist & engineer for film, brands, and emerging media"
 
 ## 7. Design Style
 
-- [ ] a) Minimal / clean — professional
-- [ ] b) Dark / immersive — textured
-- [ ] c) Image-driven — let work speak
-- [ ] d) Other (describe or send reference links)
+- Minimal / clean + Image-driven
+- Reference needed for specific direction
 
-## 8. Tech Stack Preference
+## 8. Tech Stack
 
-We're dropping Jekyll. Which direction do you prefer?
-
-- [ ] a) Next.js — most flexible, good for dynamic features (contact forms, CMS)
-- [ ] b) Astro — modern, fast, great for static portfolio with media embeds
-- [ ] c) Hugo — fast static site, simple, Markdown-based
-- [ ] d) Webflow / Squarespace — no-code, fastest to launch
-- [ ] e) No preference — you decide
+User preference: No-code with CMS backend (template-based project pages).
+Budget constraint: ~30 USD/year — rules out Webflow ($168/yr) and Squarespace ($192/yr).
+**Needs further discussion.**
 
 ## 9. Technical Requirements
 
-What features do you need the site to support? (Pick all that apply)
+**Site structure:**
+- Separate main pages for: Film projects, Interactive projects, Research/papers
+- Each project has its own sub-page
 
-**Media:**
-- [ ] a) Embedded video player (Vimeo / YouTube)
-- [ ] b) Embedded audio player (SoundCloud / custom player with waveform)
-- [ ] c) Image gallery / lightbox
-- [ ] d) Showreel auto-play on homepage
+**Must have:**
+- Image gallery (per project)
+- Contact form (sends to email)
+- CMS — add/edit projects without code (upload images + text → new project page)
+- Bilingual (English + Chinese)
+- SEO optimization
+- Mobile-first, fast loading
+- Visitor analytics with location tracking
+- Custom domain (yedianyang.com)
 
-**Functionality:**
-- [ ] e) Contact form (with email notification)
-- [ ] f) CMS — ability to add/edit projects without touching code
-- [ ] g) Blog / journal section
-- [ ] h) Multi-language support (English + Chinese)
-- [ ] i) Client testimonials section
-- [ ] j) Resume / CV download (PDF)
+**Nice to have:**
+- Blog (low priority, keep the interface)
+- Resume/CV download
 
-**Performance & SEO:**
-- [ ] k) Fast loading / mobile-first responsive
-- [ ] l) SEO optimization (Google search visibility)
-- [ ] m) Custom domain (yedianyang.com)
-- [ ] n) Analytics (track visitor behavior)
-
-**Other:**
-- [ ] o) Dark mode / light mode toggle
-- [ ] p) Password-protected pages (e.g., for unreleased work)
-- [ ] q) Other: ___
+**Not needed:**
+- Embedded video/audio players
+- Auto-play
+- Client testimonials
 
 ## 10. Reference Websites
 
-Send 1-3 websites where you feel "I want something like this":
-
-1. ___
-2. ___
-3. ___
+1. www.yedianyang.com (current site)
+2. https://www.paulcocksedgestudio.com/home
 
 ## 11. Social Media & External Links
 
-Besides Email and LinkedIn, what else to include?
+- Email
+- Instagram
+- IMDb
+- Medium (TBD)
 
-- [ ] a) Instagram
-- [ ] b) Vimeo
-- [ ] c) SoundCloud
-- [ ] d) IMDb
-- [ ] e) Medium
-- [ ] f) Other: ___
+## 12. Other Notes
 
-## 12. Anything Else?
-
-Any other requirements or ideas not covered above?
+Migrating from Wix to self-hosted to reduce annual cost from ~1000 RMB to ~30 USD.
+Need template system where new projects can be added by uploading images + text.
