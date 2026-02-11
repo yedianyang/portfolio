@@ -1,0 +1,55 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { t } from '@/i18n';
+
+const locale = 'zh';
+---
+
+<Layout locale={locale} title={t(locale, 'research.title')}>
+  <section class="max-w-3xl mx-auto px-6 pt-16 pb-20">
+    <h1 class="text-3xl md:text-4xl font-light tracking-tight mb-12">
+      {t(locale, 'research.title')}
+    </h1>
+
+    <div class="space-y-10">
+      <article>
+        <h3 class="text-lg font-medium">Director's Guide to Sound Panel</h3>
+        <p class="text-sm text-accent mt-1">2023 年 12 月 — Tisch School of The Arts</p>
+        <a
+          href="https://tisch.nyu.edu/film-tv/events/2023/director-s-guide-to-sound-panel.html"
+          target="_blank"
+          rel="noopener"
+          class="text-sm text-primary underline underline-offset-4 mt-2 inline-block hover:opacity-70"
+        >
+          查看活动 &rarr;
+        </a>
+      </article>
+
+      <article>
+        <h3 class="text-lg font-medium">基于图像识别和神经网络技术的影视声音后期工艺探索</h3>
+        <p class="text-sm text-accent mt-1">2020 — 现代电影技术</p>
+        <a
+          href="https://kns.cnki.net/kcms/detail/detail.aspx?filename=YSJZ202008002&dbcode=CJFD&dbname=CJFD2020&v=L3VVcAiV6YfYdm85RTKwb1kEYOgOwWzESba784locCby4i1I7HKQgBYpHcVuL668"
+          target="_blank"
+          rel="noopener"
+          class="text-sm text-primary underline underline-offset-4 mt-2 inline-block hover:opacity-70"
+        >
+          阅读论文 &rarr;
+        </a>
+      </article>
+
+      <article>
+        <h3 class="text-lg font-medium">声音回套工艺——保护录音师的原始素材与拯救剪辑师的时间线</h3>
+        <p class="text-sm text-accent mt-1">专业工业化标准同期录音工作流程</p>
+        <a
+          href="https://mp.weixin.qq.com/s/KspizmbbniwObM001Q93bA"
+          target="_blank"
+          rel="noopener"
+          class="text-sm text-primary underline underline-offset-4 mt-2 inline-block hover:opacity-70"
+        >
+          阅读文章 &rarr;
+        </a>
+      </article>
+    </div>
+  </section>
+</Layout>

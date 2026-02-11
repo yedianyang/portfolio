@@ -1,0 +1,54 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ImageGallery from '@/components/ImageGallery.astro';
+import { t, getLocalePath } from '@/i18n';
+import { getCollection } from 'astro:content';
+
+const locale = 'en';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', ({ id }) => id.startsWith('en/'));
+  return projects.map((project) => ({
+    params: { slug: project.slug.replace('en/', '') },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+const { title, role, year, category, thumbnail, images } = project.data;
+---
+
+<Layout locale={locale} title={title}>
+  <article class="max-w-4xl mx-auto px-6 pt-16 pb-20">
+    <!-- Back link -->
+    <a
+      href={getLocalePath(locale, category || '')}
+      class="inline-flex items-center gap-1 text-sm text-accent hover:text-primary transition-colors mb-8"
+    >
+      &larr; {t(locale, 'project.back')}
+    </a>
+
+    <!-- Header -->
+    <h1 class="text-3xl md:text-4xl font-light tracking-tight mb-4">{title}</h1>
+    <div class="flex flex-wrap gap-4 text-sm text-accent mb-8">
+      {role && <span>{t(locale, 'project.role')}: {role}</span>}
+      {year && <span>{t(locale, 'project.year')}: {year}</span>}
+    </div>
+
+    <!-- Thumbnail -->
+    {thumbnail && (
+      <div class="mb-8 overflow-hidden bg-gray-100">
+        <img src={thumbnail} alt={title} class="w-full h-auto" />
+      </div>
+    )}
+
+    <!-- Content -->
+    <div class="prose prose-gray max-w-none">
+      <Content />
+    </div>
+
+    <!-- Gallery -->
+    {images && <ImageGallery images={images} />}
+  </article>
+</Layout>

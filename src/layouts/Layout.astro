@@ -1,0 +1,56 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import type { Locale } from '@/i18n';
+import { t } from '@/i18n';
+
+interface Props {
+  title?: string;
+  description?: string;
+  locale: Locale;
+}
+
+const { title, description, locale } = Astro.props;
+const siteTitle = t(locale, 'site.title');
+const siteDescription = description || t(locale, 'site.description');
+const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+---
+
+<!DOCTYPE html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={siteDescription} />
+    <meta name="author" content="Jingxi Guo" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="alternate" hreflang="en" href={Astro.url.href.replace(/\/(en|zh)\//, '/en/')} />
+    <link rel="alternate" hreflang="zh" href={Astro.url.href.replace(/\/(en|zh)\//, '/zh/')} />
+    <title>{pageTitle}</title>
+
+    <!-- Google Analytics -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-white">
+    <Header locale={locale} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>

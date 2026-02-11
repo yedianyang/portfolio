@@ -1,0 +1,32 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import { t } from '@/i18n';
+import { getCollection } from 'astro:content';
+
+const locale = 'en';
+const projects = await getCollection('projects', ({ data, id }) => {
+  return id.startsWith('en/') && data.category === 'film';
+});
+const sorted = projects.sort((a, b) => (b.data.year || 0) - (a.data.year || 0));
+---
+
+<Layout locale={locale} title={t(locale, 'nav.film')}>
+  <section class="max-w-6xl mx-auto px-6 pt-16 pb-20">
+    <h1 class="text-3xl md:text-4xl font-light tracking-tight mb-12">
+      {t(locale, 'nav.film')}
+    </h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {sorted.map((project) => (
+        <ProjectCard
+          title={project.data.title}
+          slug={project.slug.replace('en/', '')}
+          thumbnail={project.data.thumbnail}
+          role={project.data.role}
+          year={project.data.year}
+          locale={locale}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>

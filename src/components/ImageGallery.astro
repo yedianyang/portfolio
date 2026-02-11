@@ -1,0 +1,22 @@
+---
+interface Props {
+  images: { src: string; alt?: string }[];
+}
+
+const { images } = Astro.props;
+---
+
+{images.length > 0 && (
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+    {images.map((img) => (
+      <div class="overflow-hidden bg-gray-100">
+        <img
+          src={img.src}
+          alt={img.alt || ''}
+          class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </div>
+)}

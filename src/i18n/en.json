@@ -1,0 +1,52 @@
+{
+  "site": {
+    "title": "Jingxi Guo | Studio",
+    "description": "Sound designer, Artist & engineer for film, brands, and emerging media"
+  },
+  "nav": {
+    "works": "Works",
+    "film": "Film",
+    "interactive": "Interactive",
+    "research": "Research & Press",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "home": {
+    "name": "Jingxi Guo",
+    "tagline": "Sound designer, Artist & engineer for film, brands, and emerging media",
+    "featured": "Selected Works",
+    "viewAll": "View all",
+    "viewProject": "View project"
+  },
+  "about": {
+    "title": "About",
+    "bio": "Jingxi Guo is a sound artist, sound engineer, and creative technologist.",
+    "education": "Education",
+    "bfa": "Beijing Film Academy",
+    "bfaDegree": "Bachelor Degree in Sound Art — 2019",
+    "mfa": "Tisch School of the Arts, NYU",
+    "mfaDegree": "Master Degree in Interactive Telecommunications Program (ITP) — 2023"
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Interested in working together? Feel free to reach out.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Message sent! I'll get back to you soon."
+  },
+  "research": {
+    "title": "Research & Press"
+  },
+  "project": {
+    "role": "Role",
+    "year": "Year",
+    "category": "Category",
+    "back": "Back"
+  },
+  "footer": {
+    "copyright": "Jingxi Guo. All rights reserved."
+  }
+}

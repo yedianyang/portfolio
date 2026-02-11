@@ -1,0 +1,84 @@
+---
+import type { Locale } from '@/i18n';
+import { t, getLocalePath, switchLocale } from '@/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: t(locale, 'nav.film'), href: getLocalePath(locale, 'film') },
+  { label: t(locale, 'nav.interactive'), href: getLocalePath(locale, 'interactive') },
+  { label: t(locale, 'nav.research'), href: getLocalePath(locale, 'research') },
+  { label: t(locale, 'nav.about'), href: getLocalePath(locale, 'about') },
+  { label: t(locale, 'nav.contact'), href: getLocalePath(locale, 'contact') },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href={getLocalePath(locale)} class="text-lg font-medium tracking-tight hover:opacity-70 transition-opacity">
+      Jingxi Guo
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-8">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'text-sm tracking-wide hover:opacity-70 transition-opacity',
+            currentPath.startsWith(item.href) ? 'text-primary font-medium' : 'text-accent',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a
+        href={switchLocale(locale, currentPath)}
+        class="text-sm text-accent hover:text-primary transition-colors border border-gray-200 px-2 py-1 rounded"
+      >
+        {locale === 'en' ? '中文' : 'EN'}
+      </a>
+    </div>
+
+    <!-- Mobile menu button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 -mr-2"
+      aria-label="Toggle menu"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+    <div class="px-6 py-4 flex flex-col gap-4">
+      {navItems.map((item) => (
+        <a href={item.href} class="text-sm text-accent hover:text-primary transition-colors">
+          {item.label}
+        </a>
+      ))}
+      <a
+        href={switchLocale(locale, currentPath)}
+        class="text-sm text-accent hover:text-primary transition-colors"
+      >
+        {locale === 'en' ? '中文' : 'EN'}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

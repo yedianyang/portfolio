@@ -1,0 +1,74 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { t } from '@/i18n';
+
+const locale = 'en';
+---
+
+<Layout locale={locale} title={t(locale, 'contact.title')}>
+  <section class="max-w-xl mx-auto px-6 pt-16 pb-20">
+    <h1 class="text-3xl md:text-4xl font-light tracking-tight mb-4">
+      {t(locale, 'contact.title')}
+    </h1>
+    <p class="text-accent mb-10">{t(locale, 'contact.intro')}</p>
+
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="space-y-6"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hidden">
+        <label>Don't fill this out: <input name="bot-field" /></label>
+      </p>
+
+      <div>
+        <label for="name" class="block text-sm font-medium mb-2">
+          {t(locale, 'contact.name')}
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="w-full border border-gray-200 px-4 py-3 text-sm rounded focus:outline-none focus:border-primary transition-colors"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium mb-2">
+          {t(locale, 'contact.email')}
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="w-full border border-gray-200 px-4 py-3 text-sm rounded focus:outline-none focus:border-primary transition-colors"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium mb-2">
+          {t(locale, 'contact.message')}
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          class="w-full border border-gray-200 px-4 py-3 text-sm rounded focus:outline-none focus:border-primary transition-colors resize-none"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="bg-primary text-white px-6 py-3 text-sm rounded hover:opacity-90 transition-opacity"
+      >
+        {t(locale, 'contact.send')}
+      </button>
+    </form>
+  </section>
+</Layout>

@@ -1,0 +1,40 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import { t } from '@/i18n';
+import { getCollection } from 'astro:content';
+
+const locale = 'zh';
+const projects = await getCollection('projects', ({ data, id }) => {
+  return id.startsWith('zh/') && data.featured;
+});
+---
+
+<Layout locale={locale}>
+  <section class="max-w-6xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24">
+    <h1 class="text-4xl md:text-6xl font-light tracking-tight leading-tight">
+      {t(locale, 'home.name')}
+    </h1>
+    <p class="text-lg md:text-xl text-accent mt-4 max-w-2xl">
+      {t(locale, 'home.tagline')}
+    </p>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 pb-20">
+    <h2 class="text-sm font-medium uppercase tracking-widest text-accent mb-8">
+      {t(locale, 'home.featured')}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <ProjectCard
+          title={project.data.title}
+          slug={project.slug.replace('zh/', '')}
+          thumbnail={project.data.thumbnail}
+          role={project.data.role}
+          year={project.data.year}
+          locale={locale}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>

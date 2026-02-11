@@ -1,0 +1,52 @@
+{
+  "site": {
+    "title": "郭京希 | 工作室",
+    "description": "声音设计师、艺术家、工程师 — 服务于电影、品牌与新兴媒体"
+  },
+  "nav": {
+    "works": "作品",
+    "film": "电影",
+    "interactive": "交互",
+    "research": "研究与媒体",
+    "about": "关于",
+    "contact": "联系",
+    "blog": "博客"
+  },
+  "home": {
+    "name": "郭京希",
+    "tagline": "声音设计师、艺术家、工程师 — 服务于电影、品牌与新兴媒体",
+    "featured": "精选作品",
+    "viewAll": "查看全部",
+    "viewProject": "查看项目"
+  },
+  "about": {
+    "title": "关于",
+    "bio": "郭京希是一位声音艺术家、声音工程师和创意技术专家。",
+    "education": "教育背景",
+    "bfa": "北京电影学院",
+    "bfaDegree": "录音艺术学士 — 2019",
+    "mfa": "纽约大学 Tisch 艺术学院",
+    "mfaDegree": "交互电信项目 (ITP) 硕士 — 2023"
+  },
+  "contact": {
+    "title": "联系",
+    "intro": "有合作意向？欢迎联系我。",
+    "name": "姓名",
+    "email": "邮箱",
+    "message": "留言",
+    "send": "发送",
+    "success": "消息已发送！我会尽快回复。"
+  },
+  "research": {
+    "title": "研究与媒体"
+  },
+  "project": {
+    "role": "职责",
+    "year": "年份",
+    "category": "类别",
+    "back": "返回"
+  },
+  "footer": {
+    "copyright": "郭京希 版权所有"
+  }
+}
