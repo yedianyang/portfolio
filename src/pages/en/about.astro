@@ -6,41 +6,33 @@ const locale = 'en';
 ---
 
 <Layout locale={locale} title={t(locale, 'about.title')}>
-  <section class="max-w-3xl mx-auto px-6 pt-16 pb-20">
-    <h1 class="text-3xl md:text-4xl font-light tracking-tight mb-8">
-      {t(locale, 'about.title')}
-    </h1>
+  <section class="max-w-4xl mx-auto px-6 pt-12 pb-20">
+    <!-- Hero image -->
+    <div class="w-full mb-16">
+      <img
+        src="/images/about-hero.jpg"
+        alt="Jingxi Guo"
+        class="w-full h-auto object-cover"
+      />
+    </div>
 
-    <div class="prose prose-gray max-w-none">
-      <p class="text-lg leading-relaxed">
-        {t(locale, 'about.bio')}
+    <!-- Bio -->
+    <div class="text-center mb-16">
+      <p class="text-lg md:text-xl font-light leading-relaxed">
+        Jingxi Guo is a sound artist, sound engineer, and creative technologist.
       </p>
+    </div>
 
-      <h2 class="text-xl font-medium mt-12 mb-6">{t(locale, 'about.education')}</h2>
-
-      <div class="space-y-4">
-        <div>
-          <h3 class="font-medium">{t(locale, 'about.bfa')}</h3>
-          <p class="text-accent">{t(locale, 'about.bfaDegree')}</p>
-        </div>
-        <div>
-          <h3 class="font-medium">{t(locale, 'about.mfa')}</h3>
-          <p class="text-accent">{t(locale, 'about.mfaDegree')}</p>
-        </div>
+    <!-- Education -->
+    <div class="text-center space-y-8 text-sm md:text-base font-light tracking-wide">
+      <div>
+        <p>Graduate from Beijing Film Academy</p>
+        <p class="text-accent">Bachelor Degree in Sound Art — 2019</p>
+      </div>
+      <div>
+        <p>Graduate from Tisch School of the Arts at NYU</p>
+        <p class="text-accent">Master Degree in ITP — 2023</p>
       </div>
     </div>
-
-    <!-- Resume download placeholder -->
-    <!--
-    <div class="mt-12">
-      <a
-        href="/resume.pdf"
-        class="inline-flex items-center gap-2 text-sm border border-gray-200 px-4 py-2 rounded hover:bg-gray-50 transition-colors"
-        download
-      >
-        Download CV (PDF)
-      </a>
-    </div>
-    -->
   </section>
 </Layout>
