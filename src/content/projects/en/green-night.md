@@ -1,14 +1,14 @@
 ---
 title: "Green Night"
 role: "Production Sound Mixer"
-year: 2023
+year: 2022
 category: "film"
 featured: true
 thumbnail: ""
 images: []
-order: 2
+order: 4
 ---
 
-Feature film.
+Feature film. Filming in South Korea, industrial-level collaboration across departments in different languages.
 
-<!-- Add project description, production details, and behind-the-scenes notes here -->
+- Selected and premiered at the Panorama section — 73rd Berlin International Film Festival (Berlinale) 2023

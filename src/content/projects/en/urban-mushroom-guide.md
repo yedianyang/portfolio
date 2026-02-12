@@ -1,14 +1,14 @@
 ---
-title: "Urban Mushroom Generation Guide"
-role: "Sound Designer, Media Artist"
-year: 2023
+title: "Beijing Mushroom"
+role: "Digital Media Art Director, Actor, Sound Supervisor"
+year: 2024
 category: "film"
 featured: true
 thumbnail: ""
 images: []
-order: 3
+order: 2
 ---
 
-Experimental short film.
+Short film.
 
-<!-- Add project description, production details, and behind-the-scenes notes here -->
+- Selected and premiered in FIRST PIONEER at the First International Film Festival 2024

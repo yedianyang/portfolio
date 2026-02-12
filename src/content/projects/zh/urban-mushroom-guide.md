@@ -1,14 +1,14 @@
 ---
 title: "城市蘑菇生成指南"
-role: "声音设计 / 媒体艺术家"
-year: 2023
+role: "数字媒体艺术指导 / 演员 / 声音监制"
+year: 2024
 category: "film"
 featured: true
 thumbnail: ""
 images: []
-order: 3
+order: 2
 ---
 
-实验短片。
+短片。
 
-<!-- 在此添加项目描述、制作细节等 -->
+- 入选2024年FIRST青年电影展 先锋创作单元
