@@ -4,256 +4,92 @@ import { t } from '@/i18n';
 
 const locale = 'en';
 
-// Timeline data — add your real sound packs here
 const timeline = [
-  {
-    year: 2025,
-    items: [
-      {
-        title: 'New York City — Winter Subway',
-        category: 'field',
-        description: 'Underground rumbles, platform announcements, turnstile clicks, and distant buskers in MTA stations.',
-        duration: '24:30',
-        tracks: 12,
-        audio: '',
-        free: '',
-        paid: '',
-      },
-    ],
-  },
-  {
-    year: 2024,
-    items: [
-      {
-        title: 'Shanghai Film Set — Production Ambience',
-        category: 'ambience',
-        description: 'On-set ambience from Zoom In Zoom Out production. Crew chatter, equipment hums, slate claps.',
-        duration: '18:45',
-        tracks: 8,
-        audio: '',
-        free: '',
-        paid: '',
-      },
-      {
-        title: 'Beijing Hutong — Four Seasons',
-        category: 'field',
-        description: 'A year-long recording project capturing the evolving soundscape of a disappearing hutong neighborhood.',
-        duration: '42:00',
-        tracks: 16,
-        audio: '',
-        free: '',
-        paid: '',
-      },
-    ],
-  },
-  {
-    year: 2023,
-    items: [
-      {
-        title: 'NYU ITP — Machine Sounds',
-        category: 'experimental',
-        description: 'Servo motors, 3D printers, laser cutters, CNC mills — the sonic palette of a fabrication lab.',
-        duration: '15:20',
-        tracks: 10,
-        audio: '',
-        free: '',
-        paid: '',
-      },
-    ],
-  },
-  {
-    year: 2022,
-    items: [
-      {
-        title: 'Seoul — Night Markets & Rain',
-        category: 'field',
-        description: 'Recorded during Green Night production. Street vendors, sizzling food, monsoon rain on metal roofs.',
-        duration: '31:10',
-        tracks: 14,
-        audio: '',
-        free: '',
-        paid: '',
-      },
-    ],
-  },
-  {
-    year: 2021,
-    items: [
-      {
-        title: 'Brooklyn — Apartment Foley Kit',
-        category: 'foley',
-        description: 'Doors, floors, kitchen, windows, radiator pipes — a complete apartment foley collection.',
-        duration: '28:00',
-        tracks: 20,
-        audio: '',
-        free: '',
-        paid: '',
-      },
-    ],
-  },
-  {
-    year: 2020,
-    items: [
-      {
-        title: 'Anaya — Sea & Theater',
-        category: 'ambience',
-        description: 'Waves, wind, seagulls, and the acoustic space of outdoor theater during the Anaya Theater Festival.',
-        duration: '22:15',
-        tracks: 8,
-        audio: '',
-        free: '',
-        paid: '',
-      },
-    ],
-  },
-  {
-    year: 2019,
-    items: [
-      {
-        title: 'Beijing Film Academy — Studio Collection',
-        category: 'fx',
-        description: 'Sound effects recorded in professional studio: impacts, whooshes, risers, drones.',
-        duration: '35:40',
-        tracks: 24,
-        audio: '',
-        free: '',
-        paid: '',
-      },
-      {
-        title: 'National Day Parade — Spatial Audio Elements',
-        category: 'field',
-        description: 'Marching formations, crowd reactions, vehicle engines, aircraft flyovers — captured for the 70th Anniversary simulation.',
-        duration: '19:50',
-        tracks: 10,
-        audio: '',
-        free: '',
-        paid: '',
-      },
-    ],
-  },
-  {
-    year: 2017,
-    items: [
-      {
-        title: 'Beijing — Campus Life',
-        category: 'ambience',
-        description: 'Canteen crowds, dormitory hallways, basketball courts, library silence — the soundscape of student life.',
-        duration: '20:00',
-        tracks: 10,
-        audio: '',
-        free: '',
-        paid: '',
-      },
-    ],
-  },
-  {
-    year: 2015,
-    items: [
-      {
-        title: 'First Recordings — Home & Street',
-        category: 'field',
-        description: 'Where it all began. Early experiments with a portable recorder — traffic, parks, markets, family.',
-        duration: '14:30',
-        tracks: 8,
-        audio: '',
-        free: '',
-        paid: '',
-      },
-    ],
-  },
+  { year: 2025, title: 'New York — Winter Subway', place: 'New York' },
+  { year: 2024, title: 'Shanghai Film Set', place: 'Shanghai' },
+  { year: 2024, title: 'Beijing Hutong — Four Seasons', place: 'Beijing' },
+  { year: 2023, title: 'Machine Sounds', place: 'NYU ITP' },
+  { year: 2022, title: 'Night Markets & Rain', place: 'Seoul' },
+  { year: 2021, title: 'Apartment Foley', place: 'Brooklyn' },
+  { year: 2020, title: 'Sea & Theater', place: 'Anaya' },
+  { year: 2019, title: 'Studio Collection', place: 'BFA' },
+  { year: 2019, title: 'Spatial Audio Elements', place: 'Beijing' },
+  { year: 2017, title: 'Campus Life', place: 'Beijing' },
+  { year: 2015, title: 'First Recordings', place: 'Home' },
 ];
 
-const categoryLabels: Record<string, string> = {
-  field: t(locale, 'soundLibrary.categories.field'),
-  foley: t(locale, 'soundLibrary.categories.foley'),
-  ambience: t(locale, 'soundLibrary.categories.ambience'),
-  fx: t(locale, 'soundLibrary.categories.fx'),
-  experimental: t(locale, 'soundLibrary.categories.experimental'),
-};
-
-const categoryColors: Record<string, string> = {
-  field: 'bg-emerald-100 text-emerald-800',
-  foley: 'bg-amber-100 text-amber-800',
-  ambience: 'bg-sky-100 text-sky-800',
-  fx: 'bg-violet-100 text-violet-800',
-  experimental: 'bg-rose-100 text-rose-800',
-};
+// Group by year
+const grouped = timeline.reduce((acc, item) => {
+  const existing = acc.find(g => g.year === item.year);
+  if (existing) {
+    existing.items.push(item);
+  } else {
+    acc.push({ year: item.year, items: [item] });
+  }
+  return acc;
+}, [] as { year: number; items: typeof timeline }[]);
 ---
 
 <Layout locale={locale} title={t(locale, 'soundLibrary.title')}>
-  <!-- Header -->
-  <section class="max-w-4xl mx-auto px-6 pt-16 pb-8">
-    <h1 class="text-3xl md:text-4xl font-light tracking-tight mb-4">
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-6 pt-24 pb-20 md:pt-32">
+    <h1 class="text-5xl md:text-7xl font-extralight tracking-tight">
       {t(locale, 'soundLibrary.title')}
     </h1>
-    <p class="text-lg text-accent font-light max-w-2xl">
+    <p class="text-base text-accent font-light mt-6 max-w-lg">
       {t(locale, 'soundLibrary.subtitle')}
     </p>
   </section>
 
   <!-- Timeline -->
-  <section class="max-w-4xl mx-auto px-6 pb-20">
-    <div class="relative">
-      <!-- Vertical line -->
-      <div class="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gray-200"></div>
-
-      {timeline.map((yearGroup) => (
-        <div class="mb-12">
-          <!-- Year marker -->
-          <div class="relative flex items-center mb-6">
-            <div class="w-8 md:w-16 flex justify-center relative z-10">
-              <div class="w-3 h-3 rounded-full bg-primary"></div>
-            </div>
-            <h2 class="text-2xl md:text-3xl font-light tracking-tight ml-4">{yearGroup.year}</h2>
+  <section class="max-w-5xl mx-auto px-6 pb-32">
+    {grouped.map((group) => (
+      <div class="relative grid grid-cols-[80px_1fr] md:grid-cols-[120px_1fr] gap-0 mb-0">
+        <!-- Year column -->
+        <div class="relative">
+          <div class="sticky top-24 text-right pr-6 md:pr-10">
+            <span class="text-3xl md:text-5xl font-extralight text-gray-200">{group.year}</span>
           </div>
+        </div>
 
-          <!-- Sound packs for this year -->
-          {yearGroup.items.map((item) => (
-            <div class="relative flex ml-8 md:ml-16 pl-4 md:pl-8 mb-6">
-              <div class="flex-1 border border-gray-100 rounded-lg p-5 hover:border-gray-300 transition-colors">
-                <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
-                  <div>
-                    <h3 class="text-base font-medium">{item.title}</h3>
-                    <div class="flex items-center gap-3 mt-1">
-                      <span class={`text-xs px-2 py-0.5 rounded-full ${categoryColors[item.category]}`}>
-                        {categoryLabels[item.category]}
-                      </span>
-                      <span class="text-xs text-accent">{item.tracks} tracks</span>
-                      <span class="text-xs text-accent">{item.duration}</span>
-                    </div>
-                  </div>
-                </div>
-                <p class="text-sm text-accent leading-relaxed mb-4">{item.description}</p>
+        <!-- Items column -->
+        <div class="border-l border-gray-100 pl-6 md:pl-10 pb-16">
+          {group.items.map((item) => (
+            <div class="group py-6 cursor-pointer">
+              <div class="flex items-baseline gap-3">
+                <h3 class="text-lg md:text-xl font-light group-hover:text-accent transition-colors duration-300">
+                  {item.title}
+                </h3>
+                <span class="text-xs text-gray-300 font-light tracking-wider uppercase">{item.place}</span>
+              </div>
 
-                <!-- Audio player placeholder -->
-                <div class="bg-gray-50 rounded p-3 mb-4">
-                  <div class="flex items-center gap-3">
-                    <button class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 opacity-50 cursor-not-allowed">
-                      <svg class="w-3 h-3 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </button>
-                    <div class="flex-1 h-1 bg-gray-200 rounded-full">
-                      <div class="h-full w-0 bg-primary rounded-full"></div>
-                    </div>
-                    <span class="text-xs text-accent flex-shrink-0">{item.duration}</span>
-                  </div>
-                </div>
+              <!-- Waveform visual -->
+              <div class="mt-4 flex items-end gap-[2px] h-8 opacity-30 group-hover:opacity-100 transition-opacity duration-500">
+                {Array.from({ length: 60 }).map((_, i) => {
+                  const h = Math.sin(i * 0.3 + group.year * 0.1) * 0.5 + 0.5;
+                  const height = Math.max(8, h * 100);
+                  return (
+                    <div
+                      class="flex-1 bg-primary rounded-full transition-all duration-300"
+                      style={`height: ${height}%`}
+                    />
+                  );
+                })}
+              </div>
 
-                <!-- Download buttons -->
-                <div class="flex flex-wrap gap-2">
-                  <span class="text-xs border border-gray-200 text-accent px-3 py-1.5 rounded opacity-50">
-                    {t(locale, 'soundLibrary.downloadFree')} — {t(locale, 'soundLibrary.comingSoon')}
-                  </span>
-                  <span class="text-xs border border-primary text-primary px-3 py-1.5 rounded opacity-50">
-                    {t(locale, 'soundLibrary.buyHiFi')} — {t(locale, 'soundLibrary.comingSoon')}
-                  </span>
+              <!-- Hover reveal: play hint -->
+              <div class="mt-3 flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="flex items-center gap-2 text-xs text-accent">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <span>{t(locale, 'soundLibrary.comingSoon')}</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </section>
 </Layout>
