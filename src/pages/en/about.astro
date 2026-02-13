@@ -7,12 +7,13 @@ const locale = 'en';
 
 <Layout locale={locale} title={t(locale, 'about.title')}>
   <section class="max-w-4xl mx-auto px-6 pt-12 pb-20">
-    <!-- Hero image -->
-    <div class="w-full mb-16">
+    <!-- Hero image: replace /images/about-hero.jpg with your image -->
+    <div class="w-full mb-16 bg-gray-100 aspect-[16/9] flex items-center justify-center overflow-hidden">
       <img
         src="/images/about-hero.jpg"
         alt="Jingxi Guo"
-        class="w-full h-auto object-cover"
+        class="w-full h-full object-cover"
+        onerror="this.style.display='none'"
       />
     </div>
 
