@@ -19,7 +19,7 @@ const { title, slug, thumbnail, role, year, locale } = Astro.props;
   href={getLocalePath(locale, `projects/${slug}`)}
   class="group block"
 >
-  <div class="aspect-[4/3] overflow-hidden bg-gray-100 mb-3">
+  <div class="aspect-[3/4] overflow-hidden bg-gray-100 mb-3">
     {thumbnail ? (
       <img
         src={thumbnail}
