@@ -33,18 +33,8 @@ const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     <link rel="alternate" hreflang="zh" href={Astro.url.href.replace(/\/(en|zh)\//, '/zh/')} />
     <title>{pageTitle}</title>
 
-    <!-- Google Analytics -->
-    <script
-      is:inline
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-    ></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <!-- Cloudflare Web Analytics -->
+    <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "CLOUDFLARE_ANALYTICS_TOKEN"}'></script>
   </head>
   <body class="min-h-screen flex flex-col bg-white">
     <Header locale={locale} />
