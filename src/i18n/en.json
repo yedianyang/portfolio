@@ -7,6 +7,7 @@
     "works": "Works",
     "film": "Film",
     "interactive": "Interactive",
+    "soundLibrary": "Sound Library",
     "research": "Research & Press",
     "about": "About",
     "contact": "Contact",
@@ -41,6 +42,21 @@
   },
   "research": {
     "title": "Research & Press"
+  },
+  "soundLibrary": {
+    "title": "Sound Library",
+    "subtitle": "A decade of field recordings, sound effects, and sonic experiments — from Beijing to New York.",
+    "listenFree": "Preview",
+    "downloadFree": "Free (Lo-Fi)",
+    "buyHiFi": "Buy Hi-Fi",
+    "comingSoon": "Coming Soon",
+    "categories": {
+      "field": "Field Recording",
+      "foley": "Foley",
+      "ambience": "Ambience",
+      "fx": "Sound FX",
+      "experimental": "Experimental"
+    }
   },
   "project": {
     "role": "Role",

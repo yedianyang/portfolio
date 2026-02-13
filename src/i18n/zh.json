@@ -7,6 +7,7 @@
     "works": "作品",
     "film": "电影",
     "interactive": "交互",
+    "soundLibrary": "音效库",
     "research": "研究与媒体",
     "about": "关于",
     "contact": "联系",
@@ -41,6 +42,21 @@
   },
   "research": {
     "title": "研究与媒体"
+  },
+  "soundLibrary": {
+    "title": "音效库",
+    "subtitle": "十年田野录音、音效设计与声音实验 — 从北京到纽约。",
+    "listenFree": "试听",
+    "downloadFree": "免费下载 (低质量)",
+    "buyHiFi": "购买高质量",
+    "comingSoon": "即将上线",
+    "categories": {
+      "field": "田野录音",
+      "foley": "拟音",
+      "ambience": "环境音",
+      "fx": "音效",
+      "experimental": "实验"
+    }
   },
   "project": {
     "role": "职责",
